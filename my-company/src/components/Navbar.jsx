@@ -7,6 +7,7 @@ function Navbar() {
     <div className='navbar' style={{ display: 'flex',
                                      justifyContent: 'space-around',
                                      alignItems: 'center',
+                                     backgroundColor: '#f8f9fa',
                                      padding: '20px',
                                       margin: '0 100px' }}>
       <Link to={'/Home'}>Home</Link>
