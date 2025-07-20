@@ -4,7 +4,11 @@ import { Link } from 'react-router-dom';
 
 function Navbar() {
   return (
-    <div className='navbar'>
+    <div className='navbar' style={{ display: 'flex',
+                                     justifyContent: 'space-around',
+                                     alignItems: 'center',
+                                     padding: '20px',
+                                      margin: '0 100px' }}>
       <Link to={'/Home'}>Home</Link>
       <Link to={'/About'}>About</Link>
       <Link to={'/Services'}>Services</Link>
