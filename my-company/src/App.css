@@ -1,0 +1,99 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.navbar{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  margin: 0 100px;
+}
+
+.navbar a{
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  color: #000;
+  border-bottom: 2px solid transparent;
+
+}
+.navbar a:hover{
+  color: #183B4E;
+  border-bottom: 2px solid #183B4E;
+}
+
+ h1{
+  font-size: 45px;
+  margin-top: 100px;
+}
+.home:hover{
+   filter: drop-shadow(0 0 5em #da9b37);
+}
+.home h1 span{
+  color: #DDA853;
+  text-decoration: underline;
+}
+button{
+ width: 150px;
+  padding: 10px;
+  margin: 15px auto !important;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+.about:hover{
+   filter: drop-shadow(0 0 5em #005255);
+}
+.about span{
+  color: #077A7D;
+}
+
+.services:hover{
+   filter: drop-shadow(0 0 5em #01ff45);
+}
+.services span{
+  color: #5E936C;
+}
+ul{
+  padding: 0;
+  margin: 0;
+}
+ul li{
+  width: 300px;
+  list-style: none;
+  font-size: 20px;
+  margin: 10px auto;
+}
+
+.contact:hover{
+   filter: drop-shadow(0 0 5em #bd9696);
+}
+.contact span{
+  color: #B04A4A;
+}
+.contact input, .contact textarea{
+  width: 300px;
+  padding: 10px;
+  margin: 15px auto !important;
+  background-color: #fadede;
+  border-bottom: 3px solid #B04A4A !important;
+  border: none;
+  border-radius: 5px;
+}
+
+.contact button{
+  background-color: #B04A4A;
+}
+
+.contact button:hover{
+  background-color: #8c3f3f;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);
+  
+}
