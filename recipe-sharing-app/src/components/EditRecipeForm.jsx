@@ -10,8 +10,8 @@ const EditRecipeForm = ({ recipe, onFinish }) => {
   const [title, setTitle] = useState(recipe.title);
   const [description, setDescription] = useState(recipe.description);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
 
     const updatedRecipes = recipes.map(r =>
       r.id === recipe.id ? { ...r, title, description } : r
