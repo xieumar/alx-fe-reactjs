@@ -1,31 +1,18 @@
-import { useState } from 'react';
-import useRecipeStore from './RecipeStore';
-import EditRecipeForm from './EditRecipeForm';
+ import { useRecipeStore } from './RecipeStore';
 
-const RecipeList = () => {
-  const recipes = useRecipeStore(state => state.recipes);
-  const [editingId, setEditingId] = useState(null);
+  const RecipeList = () => {
+    const recipes = useRecipeStore(state => state.recipes);
 
-  return (
-    <div>
-      {recipes.map(recipe => (
-        <div key={recipe.id} style={{ border: '1px solid #ccc', padding: '10px', marginBottom: '10px' }}>
-          {editingId === recipe.id ? (
-            <EditRecipeForm
-              recipe={recipe}
-              onFinish={() => setEditingId(null)}
-            />
-          ) : (
-            <>
-              <h3>{recipe.title}</h3>
-              <p>{recipe.description}</p>
-              <button onClick={() => setEditingId(recipe.id)}>Edit</button>
-            </>
-          )}
-        </div>
-      ))}
-    </div>
-  );
-};
+    return (
+      <div>
+        {recipes.map(recipe => (
+          <div key={recipe.id}className=' w-sm h-4/5 rounded mx-auto my-2.5 flex flex-col gap-2'>
+            <h3 className='mx-auto text-xl mb-1.5'>Title: {recipe.title}</h3>
+            <p className='mx-auto text-base mb-1.5'>Description: {recipe.description}</p>
+          </div>
+        ))}
+      </div>
+    );
+  };
 
-export default RecipeList;
+  export default RecipeList;
