@@ -2,9 +2,10 @@ import { BrowserRouter as Router  ,Routes, Route } from 'react-router-dom';
 import './App.css';
 import AddRecipeForm from './components/AddRecipeForm';
 import RecipeList from './components/RecipeList';
-import EditRecipeForm from './components/EditRecipeForm';
 import RecipeDetails from './components/RecipeDetails';
 import SearchBar from './components/SearchBar';
+import FavoritesList from './components/FavoritesList';
+import RecommendationsList from './components/RecommendationsList';
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
             <AddRecipeForm />
             <SearchBar />
             <RecipeList />
+            <FavoritesList />
+            <RecommendationsList />
           </>
         } />
         <Route path="/:recipeId" element={<RecipeDetails />} />
