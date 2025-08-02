@@ -8,7 +8,7 @@ import Contact from './components/Contact';
 import Services from './components/Services';
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
     <>
