@@ -12,7 +12,8 @@
       "Guanciale (or pancetta)",
       "Black pepper",
       "Salt"
-    ]
+    ],
+    "instructions": "Cook the spaghetti in salted water. In a separate pan, cook the guanciale until crispy. Beat the eggs with grated cheese and pepper. Drain the pasta, reserving some cooking water, and mix it with the guanciale. Remove from heat and quickly stir in the egg mixture, adding reserved pasta water as needed to create a creamy sauce. Serve immediately."
   },
   {
     "id": 2,
@@ -30,7 +31,8 @@
       "Spices (cumin, coriander, garam masala)",
       "Cream",
       "Cilantro"
-    ]
+    ],
+    "instructions": "Marinate the chicken in yogurt and spices, then grill or bake until cooked. In a pan, sauté onions, garlic, and ginger, add tomato puree and spices, then stir in cream. Add the grilled chicken to the sauce and simmer before serving with rice or naan."
   },
   {
     "id": 3,
@@ -45,7 +47,8 @@
       "Ginger",
       "Sesame oil",
       "Salt and pepper"
-    ]
+    ],
+    "instructions": "Heat oil in a pan, add garlic and ginger, then add the mixed vegetables. Stir-fry for a few minutes until tender-crisp, then add soy sauce and sesame oil. Cook for another minute and serve hot."
   },
   {
     "id": 4,
@@ -62,6 +65,7 @@
       "Tomatoes",
       "Salsa",
       "Sour cream"
-    ]
+    ],
+    "instructions": "Cook the ground beef with taco seasoning, fill the taco shells with the beef, and top with lettuce, cheese, tomatoes, and salsa."
   }
 ]

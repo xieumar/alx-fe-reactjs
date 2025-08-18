@@ -47,6 +47,10 @@ function RecipeDetail() {
             </li>
           ))}
         </ul>
+        <h2 className=" text-lg font-semibold">Instructions</h2>
+        <p className=" text-base text-justify p-6 w-[340px] sm:w-lg">
+          {recipe.instructions}
+        </p>
       </div>
     </div>
   );
