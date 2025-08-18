@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Spaghetti Carbonara",
+    "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
+    "image": "https://images.unsplash.com/photo-1588173178849-bfe1722f52df?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c3BhZ2hldHRpJTIwY2FyYm9uYXJhfGVufDB8MnwwfHx8MA%3D%3D"
+  },
+  {
+    "id": 2,
+    "title": "Chicken Tikka Masala",
+    "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
+    "image": "https://images.unsplash.com/photo-1707448829764-9474458021ed?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2hpY2tlbiUyMHRpa2thJTIwbWFzYWxhfGVufDB8MnwwfHx8MA%3D%3D"
+  },
+  {
+    "id": 3,
+    "title": "Vegetable Stir Fry",
+    "summary": "A quick and healthy dish made with a mix of seasonal vegetables stir-fried in a savory sauce.",
+    "image": "https://plus.unsplash.com/premium_photo-1664478238082-3df93e48c491?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dmVnZXRhYmxlJTIwc3RpciUyMGZyeSUyMGRpc2h8ZW58MHwyfDB8fHww"
+  },
+  {
+    "id": 4,
+    "title": "Beef Tacos",
+    "summary": "Soft or hard shell tacos filled with seasoned ground beef, topped with lettuce, cheese, and salsa.",
+    "image": "https://plus.unsplash.com/premium_photo-1664476631037-87a2714dd04e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmVlZiUyMHRhY29zfGVufDB8MnwwfHx8MA%3D%3D"
+  }
+]
