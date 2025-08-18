@@ -3,24 +3,65 @@
     "id": 1,
     "title": "Spaghetti Carbonara",
     "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
-    "image": "https://images.unsplash.com/photo-1588173178849-bfe1722f52df?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c3BhZ2hldHRpJTIwY2FyYm9uYXJhfGVufDB8MnwwfHx8MA%3D%3D"
+    "image": "https://images.unsplash.com/photo-1588173178849-bfe1722f52df?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c3BhZ2hldHRpJTIwY2FyYm9uYXJhfGVufDB8MnwwfHx8MA%3D%3D",
+    "details": "Spaghetti Carbonara is a traditional Italian pasta dish from Rome, made with egg, hard cheese, pancetta, and pepper. The creamy sauce is created by mixing the eggs and cheese with the hot pasta, which cooks the eggs gently without scrambling them.",
+    "ingredients": [
+      "Spaghetti",
+      "Eggs",
+      "Pecorino Romano cheese",
+      "Guanciale (or pancetta)",
+      "Black pepper",
+      "Salt"
+    ]
   },
   {
     "id": 2,
     "title": "Chicken Tikka Masala",
     "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
-    "image": "https://images.unsplash.com/photo-1707448829764-9474458021ed?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2hpY2tlbiUyMHRpa2thJTIwbWFzYWxhfGVufDB8MnwwfHx8MA%3D%3D"
+    "image": "https://images.unsplash.com/photo-1707448829764-9474458021ed?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2hpY2tlbiUyMHRpa2thJTIwbWFzYWxhfGVufDB8MnwwfHx8MA%3D%3D",
+    "details": "Chicken Tikka Masala is a popular dish in Indian cuisine, consisting of marinated chicken pieces cooked in a spiced tomato sauce. The chicken is typically grilled or roasted before being added to the sauce, which is rich and creamy, often made with yogurt or cream.",
+    "ingredients": [
+      "Chicken breast",
+      "Yogurt",
+      "Tomato puree",
+      "Onion",
+      "Garlic",
+      "Ginger",
+      "Spices (cumin, coriander, garam masala)",
+      "Cream",
+      "Cilantro"
+    ]
   },
   {
     "id": 3,
     "title": "Vegetable Stir Fry",
     "summary": "A quick and healthy dish made with a mix of seasonal vegetables stir-fried in a savory sauce.",
-    "image": "https://plus.unsplash.com/premium_photo-1664478238082-3df93e48c491?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dmVnZXRhYmxlJTIwc3RpciUyMGZyeSUyMGRpc2h8ZW58MHwyfDB8fHww"
+    "image": "https://plus.unsplash.com/premium_photo-1664478238082-3df93e48c491?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8dmVnZXRhYmxlJTIwc3RpciUyMGZyeSUyMGRpc2h8ZW58MHwyfDB8fHww",
+    "details": "Vegetable Stir Fry is a versatile dish that can include a variety of vegetables such as bell peppers, broccoli, carrots, and snap peas. The vegetables are quickly cooked in a hot pan with a small amount of oil, often flavored with soy sauce, garlic, and ginger.",
+    "ingredients": [
+      "Mixed vegetables (bell peppers, broccoli, carrots, snap peas)",
+      "Soy sauce",
+      "Garlic",
+      "Ginger",
+      "Sesame oil",
+      "Salt and pepper"
+    ]
   },
   {
     "id": 4,
     "title": "Beef Tacos",
     "summary": "Soft or hard shell tacos filled with seasoned ground beef, topped with lettuce, cheese, and salsa.",
-    "image": "https://plus.unsplash.com/premium_photo-1664476631037-87a2714dd04e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmVlZiUyMHRhY29zfGVufDB8MnwwfHx8MA%3D%3D"
+    "image": "https://plus.unsplash.com/premium_photo-1664476631037-87a2714dd04e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmVlZiUyMHRhY29zfGVufDB8MnwwfHx8MA%3D%3D",
+    "details": "Beef Tacos are a staple in Mexican cuisine, featuring ground beef seasoned with spices and served in either soft or hard taco shells. They are typically topped with fresh ingredients like lettuce, cheese, tomatoes, and salsa, making them a flavorful and satisfying meal.",
+    "ingredients": [
+      "Ground beef",
+      "Taco seasoning",
+      "Taco shells (soft or hard)",
+      "Lettuce",
+      "Cheese (cheddar or Mexican blend)",
+      "Tomatoes",
+      "Salsa",
+      "Sour cream"
+    ]
   }
 ]
