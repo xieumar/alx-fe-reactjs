@@ -23,7 +23,7 @@ function RecipeDetail() {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-8 ">
+    <div className="flex flex-col items-center justify-center min-h-screen p-8 bg-white shadow-md rounded-lg">
       <h1 className="text-3xl font-bold mb-4 ">
         Recipe <span className=" text-yellow-400">Details</span>
       </h1>
