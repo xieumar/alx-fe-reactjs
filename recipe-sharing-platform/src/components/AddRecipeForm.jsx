@@ -7,10 +7,8 @@ function AddRecipeForm() {
     preparation: "",
   });
 
-  // ✅ Error handling state
   const [errors, setErrors] = useState({});
 
-  // ✅ Validation function
   const validate = () => {
     let newErrors = {};
 
@@ -25,83 +23,78 @@ function AddRecipeForm() {
     }
 
     setErrors(newErrors);
-    return Object.keys(newErrors).length === 0; // ✅ true if no errors
+    return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    if (!validate()) return; // stop if validation fails
+    if (!validate()) return;
 
     alert("Recipe submitted successfully!");
     console.log(form);
 
-    // ✅ Reset form & errors
-    setForm({
-      title: "",
-      ingredients: "",
-      preparation: "",
-    });
+    setForm({ title: "", ingredients: "", preparation: "" });
     setErrors({});
   };
 
   return (
-    <div className="formcontainer flex flex-col p-4 mx-auto w-[500px]">
-      <h1 className="text-center">Add recipe form</h1>
-      <form onSubmit={handleSubmit} className="flex flex-col gap-2">
+    <div className="formcontainer flex flex-col p-4 mx-auto w-full max-w-lg shadow-md rounded-lg bg-white/5">
+      <h1 className="text-center text-xl md:text-2xl font-bold mb-4 text-white">
+        Add Recipe Form
+      </h1>
+      <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+        {/* Title input */}
         <input
-          className="w-full h-[48px] px-3 text-white text-sm placeholder:text-white/40 bg-white/5 rounded-sm mb-1"
+          className={`w-full h-[48px] px-3 text-white text-sm placeholder:text-white/40 bg-white/10 rounded-md shadow ${
+            errors.title ? "border border-red-500" : ""
+          }`}
           placeholder="Recipe title"
           value={form.title}
-          onChange={(e) =>
-            setForm({
-              ...form,
-              title: e.target.value,
-            })
-          }
+          onChange={(e) => setForm({ ...form, title: e.target.value })}
         />
-        {errors.title && <p className="text-red-400 text-xs">{errors.title}</p>}
+        {errors.title && (
+          <p className="text-red-400 text-xs font-medium">{errors.title}</p>
+        )}
 
+        {/* Ingredients */}
         <textarea
-          className="w-full h-[100px] px-3 text-white text-sm placeholder:text-white/40 bg-white/5 rounded-sm mb-1"
+          className={`w-full h-[120px] px-3 py-2 text-white text-sm placeholder:text-white/40 bg-white/10 rounded-md shadow resize-none ${
+            errors.ingredients ? "border border-red-500" : ""
+          }`}
           placeholder="Enter the list of ingredients"
           value={form.ingredients}
-          onChange={(e) =>
-            setForm({
-              ...form,
-              ingredients: e.target.value,
-            })
-          }
+          onChange={(e) => setForm({ ...form, ingredients: e.target.value })}
         ></textarea>
         {errors.ingredients && (
-          <p className="text-red-400 text-xs">{errors.ingredients}</p>
+          <p className="text-red-400 text-xs font-medium">{errors.ingredients}</p>
         )}
 
+        {/* Preparation */}
         <textarea
-          className="w-full h-[100px] px-3 text-white text-sm placeholder:text-white/40 bg-white/5 rounded-sm mb-1"
+          className={`w-full h-[120px] px-3 py-2 text-white text-sm placeholder:text-white/40 bg-white/10 rounded-md shadow resize-none ${
+            errors.preparation ? "border border-red-500" : ""
+          }`}
           placeholder="Enter the steps to make the dish"
           value={form.preparation}
-          onChange={(e) =>
-            setForm({
-              ...form,
-              preparation: e.target.value,
-            })
-          }
+          onChange={(e) => setForm({ ...form, preparation: e.target.value })}
         ></textarea>
         {errors.preparation && (
-          <p className="text-red-400 text-xs">{errors.preparation}</p>
+          <p className="text-red-400 text-xs font-medium">
+            {errors.preparation}
+          </p>
         )}
 
-        <div className="flex gap-2 mt-2">
+        {/* Buttons */}
+        <div className="flex flex-col md:flex-row gap-3 mt-2">
           <button
             type="submit"
-            className="bg-blue-500 text-white py-2 px-4 rounded-sm hover:bg-blue-600"
+            className="bg-blue-500 text-white font-semibold py-2 px-4 rounded-md shadow hover:bg-blue-600 transition"
           >
             Submit
           </button>
           <button
             type="button"
-            className="bg-gray-500 text-white py-2 px-4 rounded-sm hover:bg-gray-600"
+            className="bg-gray-500 text-white font-semibold py-2 px-4 rounded-md shadow hover:bg-gray-600 transition"
             onClick={() => {
               setForm({ title: "", ingredients: "", preparation: "" });
               setErrors({});
