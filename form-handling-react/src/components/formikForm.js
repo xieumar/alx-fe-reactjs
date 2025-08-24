@@ -1,67 +1,98 @@
-import React from 'react';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-import * as Yup from 'yup';
+import React, { useState } from "react";
+import * as Yup from "yup";
 
-const FormicForm = () => {
-  
-  const validationSchema = Yup.object({
-    username: Yup.string()
-      .min(3, 'Must be at least 3 characters')
-      .required('Username is required'),
-    email: Yup.string()
-      .email('Invalid email address')
-      .required('Email is required'),
-    password: Yup.string()
-      .min(6, 'Password must be at least 6 characters')
-      .required('Password is required'),
+function RegistrationForm() {
+  const [form, setForm] = useState({
+    username: "",
+    email: "",
+    password: "",
   });
 
+  const [errors, setErrors] = useState({});
+
+  const schema = Yup.object().shape({
+    username: Yup.string().required("Username is required"),
+    email: Yup.string().email("Invalid email").required("Email is required"),
+    password: Yup.string().required("Password is required"),
+  });
+
+  const handleChange = (e) => {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await schema.validate(form, { abortEarly: false });
+      setErrors({});
+      console.log("Form submitted:", form);
+    } catch (validationErrors) {
+      const newErrors = {};
+      validationErrors.inner.forEach((error) => {
+        newErrors[error.path] = error.message;
+      });
+      setErrors(newErrors);
+    }
+  };
+
   return (
-    <div>
-      <h1>Formik Form</h1>
-      <Formik
-        initialValues={{ username: '', email: '', password: '' }}
-        validationSchema={validationSchema}
-        onSubmit={(values, { setSubmitting, resetForm }) => {
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
-            setSubmitting(false);
-            resetForm(); 
-          }, 400);
-        }}
-      >
-        {({ isSubmitting }) => (
-          <Form className="flex flex-col gap-3 max-w-sm mx-auto p-4 border rounded shadow-md">
-            <div>
-              <label htmlFor="username">Username</label>
-              <Field type="text" name="username" className="border p-2 w-full" />
-              <ErrorMessage name="username" component="div" className="text-red-500 text-sm" />
-            </div>
-
-            <div>
-              <label htmlFor="email">Email</label>
-              <Field type="email" name="email" className="border p-2 w-full" />
-              <ErrorMessage name="email" component="div" className="text-red-500 text-sm" />
-            </div>
-
-            <div>
-              <label htmlFor="password">Password</label>
-              <Field type="password" name="password" className="border p-2 w-full" />
-              <ErrorMessage name="password" component="div" className="text-red-500 text-sm" />
-            </div>
-
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-            >
-              Submit
-            </button>
-          </Form>
+    <form
+      onSubmit={handleSubmit}
+      className="max-w-md mx-auto p-6 border rounded-lg shadow-md space-y-4"
+    >
+      <div>
+        <label className="block text-sm font-medium">Username</label>
+        <input
+          type="text"
+          name="username"
+          value={form.username}
+          onChange={handleChange}
+          className="w-full p-2 border rounded"
+        />
+        {errors.username && (
+          <p className="text-red-500 text-sm">{errors.username}</p>
         )}
-      </Formik>
-    </div>
-  );
-};
+      </div>
 
-export default FormicForm;
+      <div>
+        <label className="block text-sm font-medium">Email</label>
+        <input
+          type="email"
+          name="email"
+          value={form.email}
+          onChange={handleChange}
+          className="w-full p-2 border rounded"
+        />
+        {errors.email && (
+          <p className="text-red-500 text-sm">{errors.email}</p>
+        )}
+      </div>
+
+      <div>
+        <label className="block text-sm font-medium">Password</label>
+        <input
+          type="password"
+          name="password"
+          value={form.password}
+          onChange={handleChange}
+          className="w-full p-2 border rounded"
+        />
+        {errors.password && (
+          <p className="text-red-500 text-sm">{errors.password}</p>
+        )}
+      </div>
+
+      <button
+        type="submit"
+        className="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700"
+      >
+        Register
+      </button>
+    </form>
+  );
+}
+
+export default RegistrationForm;
