@@ -1,15 +1,13 @@
-import React from "react";
-import { useQuery } from "react-query";
-
-const fetchPosts = async () => {
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
-  if (!res.ok) {
-    throw new Error("Network response was not ok");
-  }
-  return res.json();
-};
+import React from 'react'
+import { useQuery } from 'react-query'
 
 function PostsComponent() {
+  // Fetch function extracted for clarity
+  const fetchPosts = async () => {
+    const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+    return res.json();
+  };
+
   const { 
     isLoading, 
     isError, 
@@ -17,19 +15,21 @@ function PostsComponent() {
     data, 
     refetch, 
     isFetching 
-  } = useQuery("repoData", fetchPosts, {
-    staleTime: 5000,   // data considered fresh for 5s
-    cacheTime: 1000 * 60 * 5, // keep in cache for 5 min
+  } = useQuery("postsData", fetchPosts, {
+    staleTime: 5000,          // Data stays fresh for 5s
+    cacheTime: 1000 * 60 * 5, // Cache persists for 5 minutes
+    refetchOnWindowFocus: true,  // Refetch when user focuses window/tab
+    keepPreviousData: true       // Keep old data while fetching new one
   });
 
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading) return "Loading...";
 
-  if (isError) return <p>An error has occurred: {error.message}</p>;
+  if (isError) return "An error has occurred: " + error.message;
 
   return (
     <div>
       {data.map((post) => (
-        <div key={post.id} className="mb-4 border p-3 rounded-lg">
+        <div key={post.id} className="mb-4 p-4 border rounded">
           <h1 className="font-bold">{post.title}</h1>
           <p>{post.body}</p>
         </div>
