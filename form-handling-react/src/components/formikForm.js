@@ -1,10 +1,9 @@
-// formikForm.js
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 
 const FormicForm = () => {
-  // Validation schema using Yup
+  
   const validationSchema = Yup.object({
     username: Yup.string()
       .min(3, 'Must be at least 3 characters')
@@ -27,7 +26,7 @@ const FormicForm = () => {
           setTimeout(() => {
             alert(JSON.stringify(values, null, 2));
             setSubmitting(false);
-            resetForm(); // Clears form after submit
+            resetForm(); 
           }, 400);
         }}
       >
