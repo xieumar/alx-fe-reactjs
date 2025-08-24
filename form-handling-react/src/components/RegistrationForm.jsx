@@ -1,51 +1,44 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-const ControlledForm = () => {
-    const [formData, setFormData] = useState({ username: '', email: '' , password: ''});
-    const [errors, setErrors] = useState('');
+const RegistrationForm = () => {
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData(prevState => ({ ...prevState, [name]: value }));
-    };
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-    const handleSubmit = (e) => {
-        if (!formData.username || !formData.email || !formData.password) {
-            setErrors("All fields are required.");
-            return;
-        }
+    if (!username || !email || !password) {
+      alert("All fields are required!");
+      return;
+    }
 
-        setErrors("");
-        e.preventDefault();
-        console.log(formData);
-    };
+    console.log({ username, email, password });
+  };
 
-    return (
-        <form onSubmit={handleSubmit}>
-            <input
-                type="text"
-                name="username"
-                placeholder="Username"
-                value={formData.username}
-                onChange={handleChange}
-            />
-            <input
-                type="email"
-                name="email"
-                placeholder="Email"
-                value={formData.email}
-                onChange={handleChange}
-            />
-            <input
-                type="password"
-                name="password"
-                placeholder="Password"
-                value={formData.password}
-                onChange={handleChange}
-            />
-            <button type="submit">Submit</button>
-        </form>
-    );
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        name="username"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+      />
+      <input
+        type="email"
+        name="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+      <input
+        type="password"
+        name="password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
+      <button type="submit">Submit</button>
+    </form>
+  );
 };
 
-export default ControlledForm;
+export default RegistrationForm;
