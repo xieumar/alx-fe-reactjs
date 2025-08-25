@@ -1,5 +1,5 @@
 import { useAuthStore } from "./store";
-import { useNavigate, Outlet } from "react-router-dom";
+import { useNavigate, Outlet, Link } from "react-router-dom";
 
 function Profile() {
   const user = useAuthStore((state) => state.user);
@@ -15,7 +15,13 @@ function Profile() {
     <div>
       <h1>Welcome, {user?.name} 👋</h1>
       <button onClick={handleLogout}>Logout</button>
-      <Outlet />
+
+      <nav>
+        <Link to="details">Details</Link> |{" "}
+        <Link to="settings">Settings</Link>
+      </nav>
+
+      <Outlet /> {/* renders ProfileDetails or ProfileSettings */}
     </div>
   );
 }
