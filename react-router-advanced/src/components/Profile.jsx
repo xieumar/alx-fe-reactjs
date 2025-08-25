@@ -1,5 +1,7 @@
 import { useAuthStore } from "./store";
-import { useNavigate, Outlet, Link } from "react-router-dom";
+import { useNavigate, Outlet, Link, Routes, Route } from "react-router-dom";
+import ProfileDetails from "./ProfileDetails";
+import ProfileSettings from "./ProfileSettings";
 
 function Profile() {
   const user = useAuthStore((state) => state.user);
@@ -21,7 +23,14 @@ function Profile() {
         <Link to="settings">Settings</Link>
       </nav>
 
-      <Outlet /> {/* renders ProfileDetails or ProfileSettings */}
+      {/* Define nested routes here */}
+      <Routes>
+        <Route path="details" element={<ProfileDetails />} />
+        <Route path="settings" element={<ProfileSettings />} />
+      </Routes>
+
+      
+      <Outlet />
     </div>
   );
 }
