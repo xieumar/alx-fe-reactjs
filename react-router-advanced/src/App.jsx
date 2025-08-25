@@ -5,7 +5,7 @@ import ProfileDetails from './components/ProfileDetails';
 import ProfileSettings from './components/ProfileSettings';
 import ProtectedRoute from "./components/ProtectedRoute";
 import Login from "./components/Login";
-import Blogpost from './components/Blogpost';
+import BlogPost from './components/Blogpost';
 
 function App() {
 
@@ -14,7 +14,7 @@ function App() {
     <Router>
       <Routes>
         <Route path='/profile/*' element={<Profile />} />
-        <Route path="/blog/:postId" element={<Blogpost />} />
+        <Route path="/blog/:Id" element={<BlogPost />} />
         <Route path="/login" element={<Login />} />
         <Route
           path="/profile/*"
