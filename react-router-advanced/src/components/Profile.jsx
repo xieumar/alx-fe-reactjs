@@ -1,15 +1,23 @@
-import React from 'react'
-import { Outlet, Link } from "react-router-dom";
+import { useAuthStore } from "./store";
+import { useNavigate, Outlet } from "react-router-dom";
 
 function Profile() {
+  const user = useAuthStore((state) => state.user);
+  const logout = useAuthStore((state) => state.logout);
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate("/login");
+  };
+
   return (
-    <div> <h1>My Profile</h1>
-      <nav>
-        <Link to="details">Details</Link> |{" "}
-        <Link to="settings">Settings</Link>
-      </nav>
-      <Outlet />/</div>
-  )
+    <div>
+      <h1>Welcome, {user?.name} 👋</h1>
+      <button onClick={handleLogout}>Logout</button>
+      <Outlet />
+    </div>
+  );
 }
 
-export default Profile
+export default Profile;
